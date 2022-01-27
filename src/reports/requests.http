@@ -1,0 +1,34 @@
+POST http://localhost:3000/reports
+content-type: application/json
+
+
+{
+    "make": "ford",
+    "year": 1981,
+    "model": "mustang",
+    "mileage": 20000,
+    "lng": 3,
+    "lat": -2,
+    "price": 50000
+}
+
+# {
+#     "make": "honda",
+#     "year": 1980,
+#     "model": "civic",
+#     "mileage": 10000,
+#     "lng": 0,
+#     "lat": 0,
+#     "price": 1000
+# }
+
+### approve or disapprove
+PATCH http://localhost:3000/reports/10
+content-type: application/json
+
+{
+    "approved": true
+}
+
+### Get an estimate for an existing vehicle
+GET http://localhost:3000/reports?make=ford&model=mustang&lng=0&lat=0&mileage=2000&year=1980
